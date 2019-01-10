@@ -1,6 +1,11 @@
 <html>
   <head>
     <title>soundMan</title>
+    <style>
+      .btn-click:active {
+        background-color: gray;
+      }
+    </style>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -19,7 +24,7 @@
           { file: 'THUG LIFE', name: 'THUG LIFE' }
         ];
         playlist.forEach((x, index) => {
-          $("#audio").append("<div class='col-md-6 col-sm-6 col-xs-6 btn btn-block btn-dark' onclick='playAudio("+index+")'><i class='fa fa-play-circle fa-5x' /><br />"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".mp3' type='audio/mp3'/></audio></div>");
+          $("#audio").append("<div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' style='margin-bottom:10px;'><button class='btn btn-dark btn-block' onclick='playAudio("+index+")'> <i class='fa fa-play-circle fa-5x'/><br/>"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".mp3' type='audio/mp3'/></audio> </button></div>");
         });
       });
     </script>
@@ -32,14 +37,11 @@
     </script>
   </head>
   <body>
+    <center><br><h4>SOUND EFFECTS</h4><br></center>
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <h4>SoundMan</h4>
-        </div>
-      </div>
-      <div clsss="row" id="audio">
-      </div>
+      <div class="row" id="audio"></div>
     </div>
+    <br>
+    <center><small><i>DISCLAIMER : Website ini dibuat hanya untuk dijadikan tools pendukung percandaan! Gunakan dengan bijak!</i></small></center>
   </body>
 </html>
