@@ -1,1 +1,41 @@
-"Hello" 
+<html>
+  <head>
+    <title>soundMan</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function () {
+        var playlist = [
+          { file: 'satu', name: 'Satu'},
+          { file: 'dua', name: 'Dua'},
+          { file: 'tiga', name: 'Tiga'},
+        ];
+        playlist.forEach((x, index) => {
+          $("#audio").append("<div class='col-sm-3 btn btn-dark' style='margin:5px' onclick='playAudio("+index+")'><i class='fa fa-play-circle fa-5x' /><br />"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".wav' type='audio/wav'/></audio></div>");
+        });
+      });
+    </script>
+    <script>
+
+      function playAudio(id) {
+        var x = document.getElementById("audio"+id);
+        x.play();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>SoundMan</h4>
+        </div>
+      </div>
+      <div clsss="row" id="audio">
+      </div>
+    </div>
+  </body>
+</html>
