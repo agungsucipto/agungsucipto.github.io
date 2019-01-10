@@ -10,12 +10,16 @@
     <script>
       $(document).ready(function () {
         var playlist = [
-          { file: 'satu', name: 'Satu'},
-          { file: 'dua', name: 'Dua'},
-          { file: 'tiga', name: 'Tiga'},
+          { file: 'A FEW MOMENTS LATER', name: 'A FEW MOMENTS LATER' },
+          { file: 'DOLPHIN', name: 'DOLPHIN' },
+          { file: 'IG SUPERZOOM', name: 'IG SUPERZOOM' },
+          { file: 'KRIK KRIK', name: 'KRIK KRIK' },
+          { file: 'MISSION PASSED GTA', name: 'MISSION PASSED GTA' },
+          { file: 'SCARY', name: 'SCARY' },
+          { file: 'THUG LIFE', name: 'THUG LIFE' }
         ];
         playlist.forEach((x, index) => {
-          $("#audio").append("<div class='col-sm-3 btn btn-dark' style='margin:5px' onclick='playAudio("+index+")'><i class='fa fa-play-circle fa-5x' /><br />"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".wav' type='audio/wav'/></audio></div>");
+          $("#audio").append("<div class='col-sm-3 btn btn-dark' style='margin:5px' onclick='playAudio("+index+")'><i class='fa fa-play-circle fa-5x' /><br />"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".mp3' type='audio/mp3'/></audio></div>");
         });
       });
     </script>
