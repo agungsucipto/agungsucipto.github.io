@@ -19,7 +19,7 @@
           { file: 'THUG LIFE', name: 'THUG LIFE' }
         ];
         playlist.forEach((x, index) => {
-          $("#audio").append("<div class='col-sm-3 btn btn-dark' style='margin:5px' onclick='playAudio("+index+")'><i class='fa fa-play-circle fa-5x' /><br />"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".mp3' type='audio/mp3'/></audio></div>");
+          $("#audio").append("<div class='row'><div class='col-sm-3 col-xs-6 btn btn-dark' style='margin:5px' onclick='playAudio("+index+")'><i class='fa fa-play-circle fa-5x' /><br />"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".mp3' type='audio/mp3'/></audio></div></div>");
         });
       });
     </script>
