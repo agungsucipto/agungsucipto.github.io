@@ -16,8 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
     <script>
-      $(document).ready(function () {
-        var playlist = [
+      var playlist = [
           { file: 'A FEW MOMENTS LATER', name: 'A FEW MOMENTS LATER' },
           { file: 'DOLPHIN', name: 'DOLPHIN' },
           { file: 'IG SUPERZOOM', name: 'IG SUPERZOOM' },
@@ -26,14 +25,20 @@
           { file: 'SCARY', name: 'SCARY' },
           { file: 'THUG LIFE', name: 'THUG LIFE' }
         ];
+
+      $(document).ready(function () {
         playlist.forEach((x, index) => {
-          $("#audio").append("<div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' style='margin-bottom:10px;'><button class='btn btn-dark btn-block' onclick='playAudio("+index+")'> <i class='fa fa-play-circle fa-5x'/><br/>"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".mp3' type='audio/mp3'/></audio> </button></div>");
+          $("#audio").append("<div class='col-6' style='margin-bottom:10px;'><button class='btn btn-dark btn-block' style='min-height:120px' onclick='playAudio("+index+")'> <i class='fa fa-play-circle fa-4x'/><br/>"+x.name+"<audio id='audio" + index + "'><source id='sound_src' src='sounds/" + x.file + ".mp3' type='audio/mp3'/></audio> </button></div>");
         });
       });
-    </script>
-    <script>
+
       function playAudio(id) {
-        var x = document.getElementById("audio"+id);
+        console.log(playlist);
+        playlist.forEach((sound, index) => {
+          var element = document.getElementById("audio" + index);
+          element.pause();
+        });
+        var x = document.getElementById("audio" + id);
         x.play();
       }
     </script>
